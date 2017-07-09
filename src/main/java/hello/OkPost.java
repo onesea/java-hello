@@ -40,7 +40,7 @@ public class OkPost {
     OkPost example = new OkPost();
     String json = example.bowlingJson("Jesse", "Jake");
     //String response = example.post("http://www.roundsapp.com/post", json);
-    String response = example.post("http://www.bebanks.com:800/pay", json);
+    String response = example.post("http://www.thesite.com/api", json);
     System.out.println("okhttp -> " + response);
   }
 }
