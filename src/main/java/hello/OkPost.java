@@ -36,11 +36,20 @@ public class OkPost {
       + "]}";
   }
 
+  String bowlingJson2(String player1, String player2) {
+    return 
+      "[{'name':'" + player1 + "},"
+      + "{'name':'" + player2 +"}"
+      + "]";
+  }
+
   public static void ok_main(String[] args) throws IOException {
     OkPost example = new OkPost();
-    String json = example.bowlingJson("Jesse", "Jake");
+    String json = example.bowlingJson2("Jesse", "Jake");
     //String response = example.post("http://www.roundsapp.com/post", json);
-    String response = example.post("http://www.thesite.com/api", json);
-    System.out.println("okhttp -> " + response);
+    String url = "https://gw.codein.net/echo";
+    System.out.println("url: " + url + " method: POST body: " + json);
+    String response = example.post(url, json);
+    System.out.println("resp: " + response);
   }
 }
